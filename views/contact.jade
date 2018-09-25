@@ -2,7 +2,7 @@ extend layout
 
 block content
   p If you would like to contact me, feel free to email me at atturner2@gmail.com,
-  p or use this form.  Thank you very much! 
+  p or use this form.  Thank you very much!
   .container
     form(method='post', action='contact/send')
       h1 Contact
@@ -11,11 +11,11 @@ block content
         input.form-control(type='text',
         name='name', placeholder='Enter Name')
       .form-group
-        label Email
+        label Email Address
         input.form-control(type='email',
         name='email', placeholder='Enter')
       .form-group
-        label Email
+        label Email Message
         textarea.form-control(name='message',
         placeholder='Enter Message')
       button.btn.btn-default(type='submit') Submit

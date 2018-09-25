@@ -25,6 +25,18 @@ router.get('/login', function(req, res, next) {
   res.render('login', {title: 'Login'});
 });
 
+router.get('/resume', function(req, res, next) {
+  res.render('resume', {title: 'Resume'})
+  // Render PDF and send to browser
+      function dispatchPDF() {
+        console.log('supposed to be rendering');
+        page.render('AlexTurnerResume.docx', function() {
+          fs.createReadStream('AlexTurnerResume.docx').pipe(res);
+          phantom.exit();
+        });
+      };
+});
+
 router.post('/login', passport.authenticate('local',{failureRedirect:'/users/login',failureFlash: 'Invalid username or password'}),
   function(req, res) {
     req.flash('success', 'You are now logged in');

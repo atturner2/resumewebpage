@@ -1,3 +1,7 @@
+//This file is responsible for handling the creation of users  within the
+//MongoDB database, using the Mongoose framework. All passwords are
+//hased using Bcrypt.
+
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 

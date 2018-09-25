@@ -17,10 +17,12 @@ html(lang='en')
         .navbar-collapse.collapse
           ul.nav.navbar-nav
             if user
-              li(class=(title == 'Members' ? 'active' : ''))
-                a(href='/') Members
+              li(class=(title == 'Homepage' ? 'active' : ''))
+                a(href='/') Homepage
               li(class=(title == 'Contact' ? 'active' : ''))
                 a(href='/users/contact') Contact
+              li(class=(title == 'Resume' ? 'active' : ''))
+                a(href='/users/resume') Resume
             if !user
               li(class=(title == 'Register' ? 'active' : ''))
                 a(href='/users/register') Register
