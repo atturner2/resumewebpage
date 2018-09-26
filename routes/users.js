@@ -24,7 +24,7 @@ router.get('/contact', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   res.render('login', {title: 'Login'});
 });
-
+/*
 router.get('/resume', function(req, res, next) {
   res.render('resume', {title: 'Resume'})
   // Render PDF and send to browser
@@ -36,7 +36,7 @@ router.get('/resume', function(req, res, next) {
         });
       };
 });
-
+*/
 router.post('/login', passport.authenticate('local',{failureRedirect:'/users/login',failureFlash: 'Invalid username or password'}),
   function(req, res) {
     req.flash('success', 'You are now logged in');
@@ -97,7 +97,6 @@ router.post('/register',upload.single('profileimage') ,function(req, res, next) 
   req.checkBody('password','Password field is required').notEmpty();
   //here we will make sure password2 matches password
   req.checkBody('password2','passwords do not match').equals(req.body.password);
-
   //Here we will check for errors
   var errors = req.validationErrors();
 
