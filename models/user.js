@@ -51,8 +51,6 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
   });
 }
 
-
-
 //here we use bcryptjs to hash the password for security
 module.exports.createUser = function(newUser, callback){
   bcrypt.genSalt(10, function(err, salt) {
